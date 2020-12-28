@@ -16,6 +16,9 @@ Installation for PIL/Pillow
 Installation for Forwarding X11 - (optional, required for Remote Target.)
 	sudo apt-get install x11-apps
 
+# Run.
+* python3 imageviewer.py 
+
 # Image Viewer Features.
 1. View Next
 2. View Back
