@@ -21,12 +21,12 @@ Installation for Forwarding X11 - (optional, required for Remote Target.)
 2. View Back
 3. Image Status Count
 
-# Version.
-ImageViewer v0.2
+# Current Version.
+ImageViewer v0.3
 
 # TODO.
-1. Color Schemes
-2. Image Properties.
+1. Image Properties (Size, Name.).
+2. Image Resolution.
 
 # Author
 Insta-ID : ravikiran.me
