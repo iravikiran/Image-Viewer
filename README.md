@@ -17,6 +17,7 @@ Installation for Forwarding X11 - (optional, required for Remote Target.)
 	sudo apt-get install x11-apps
 
 # Run.
+Execute below command in Terminal (Linux/Mac) or Power Shell (Windows).
 * python3 imageviewer.py 
 
 # Image Viewer Features.
