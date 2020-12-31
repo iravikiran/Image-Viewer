@@ -1,0 +1,19 @@
+Image Viewer.
+----------------
+This is a Custom Image viewer application build with Python's Tkinter module, This application aims bring in a simple and the easy way to view your Custom images placed in the local album. 
+
+Version History:
+-----------------
+What's New with ImageViewer v0.3: (Latest)
+	- Added Support for below Nagivation buttons.
+		1. Next.
+		2. Back.
+		3. Close.
+	- Added Color scheme for Nagivation buttons.
+	
+Bug Fixes:
+	- Nagivation button Disabled, when there is no image to display.
+	- We hope everthing else is just fine! :)
+
+
+GitHub ID - iravikiran
