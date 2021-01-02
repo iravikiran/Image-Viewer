@@ -1,5 +1,5 @@
 #
-#               Python-Tkinter - ImageViewer v0.3
+#               Python-Tkinter - ImageViewer v0.6
 #
 #   A Simple Python based GUI ImageViewer Application written
 #   with Py-Tkinter.
@@ -9,6 +9,8 @@
 #                   * Previous Image
 #           ->   Close Application
 #           ->   Status Bar - Image Count.
+#	    -> 	 Image Properties:
+#	   	    * Height & Width (Resolution)
 #
 #   Feel free to add more features to the code and create a PR
 #   i'm working on adding more features on the next releases.
@@ -16,7 +18,7 @@
 #                   Author : Ravi Kiran
 #                   GitHub : iravikiran
 #
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Import all the Libraries.
 from tkinter import *
@@ -38,6 +40,7 @@ img_path = os.listdir('images')
 
 # Empty list to capture all the images in above path.
 image_list = []
+pics = []
 
 # Iterate all the images in the path and append it into the list.
 for img in img_path:
@@ -45,7 +48,8 @@ for img in img_path:
 	if os.path.exists(image):
 		# Load the image with PhotoImage method
 		img = ImageTk.PhotoImage(Image.open(image))
-		# Append the loaded image. 
+		# Append the loaded image.
+		pics.append(image)
 		image_list.append(img)
 
 # Creating a new Label for image.
@@ -54,11 +58,19 @@ label = Label(image=image_list[0])
 label.grid(row=0, column=0, columnspan=3)
 
 # Stats bar to display the total images in the UI.
-stats = Label(root, text="Showing 1 of {0} Images.".format(len(image_list)), bd=1, relief=SUNKEN, anchor=E)
-stats.grid(row=2, column=0, columnspan=3, sticky=W+E)
+stats = Label(root, text="Showing 1 of {0} Images.".format(len(image_list)), bd=1, relief=GROOVE, anchor=W)
+stats.grid(row=2, column=0, columnspan=3,sticky=W+E)
+
+# Load Image properties, to get image properties.
+im = Image.open(pics[0])
+# Get the Image Height & Width (Resolution)
+width, height = im.size
+# Label to output Image Resolution on the UI.
+props = Label(root, text="Image Resolution : {0}x{1}".format(width, height), bd=1, relief=GROOVE, anchor=E)
+props.grid(row=3, column=0, columnspan=3, sticky=W+E)
 
 
-# Next Navigation function. 
+# Next Navigation function.
 def next(image_num):
 	global label
 	global button_next
@@ -71,12 +83,20 @@ def next(image_num):
 	button_prev = Button(root, text="<< Prev", command=lambda: prev(image_num-1), bg="#ffd30e")
 	
 	# Disable nav icon if len of image is equal to total image num.
-	if image_num >= len(image_list):
+	if image_num == len(image_list):
 		button_next = Button(root, text="Next >>", state=DISABLED, bg="#9ef0b0")
 
 	# Stats label to display image count.
-	stats = Label(root, text="Showing {0} of {1} Images.".format(image_num, len(image_list)), bd=1, relief=SUNKEN, anchor=E)
-	stats.grid(row=2, column=0, columnspan=3, sticky=W+E)
+	stats = Label(root, text="Showing {0} of {1} Images.".format(image_num, len(image_list)), bd=1, relief=GROOVE, anchor=W)
+	stats.grid(row=2, column=0, columnspan=3,sticky=W+E)
+
+	# Load Image properties, to get image properties.
+	im = Image.open(pics[int(image_num-1)])
+	# Get the Image Height & Width (Resolution)
+	width, height = im.size
+	# Label to output Image Resolution on the UI.
+	props = Label(root, text="Image Resolution : {0}x{1}".format(width, height), bd=1, relief=GROOVE, anchor=E)
+	props.grid(row=3, column=0, columnspan=3, sticky=W + E)
 
 	# placing it on the grid to display.
 	label.grid(row=0, column=0, columnspan=3)
@@ -101,20 +121,29 @@ def prev(image_num):
 		button_prev = Button(root, text="<< Prev", state=DISABLED, bg="#f7e9a7")
 
 	# Stats label to display image count.
-	stats = Label(root, text="Showing {0} of {1} Images.".format(image_num, len(image_list)), bd=1, relief=SUNKEN, anchor=E)
-	stats.grid(row=2, column=0, columnspan=3, sticky=W+E)
+	stats = Label(root, text="Showing {0} of {1} Images.".format(image_num, len(image_list)), bd=1, relief=GROOVE, anchor=W)
+	stats.grid(row=2, column=0, columnspan=3,sticky=W+E)
+
+	# Load Image properties, to get image properties.
+	im = Image.open(pics[int(image_num-1)])
+	# Get the Image Height & Width (Resolution)
+	width, height = im.size
+	# Label to output Image Resolution on the UI.
+	props = Label(root, text="Image Resolution : {0}x{1}".format(width, height), bd=1, relief=GROOVE, anchor=E)
+	props.grid(row=3, column=0, columnspan=3, sticky=W + E)
 
 	# placing it on the grid to display.
 	label.grid(row=0, column=0, columnspan=3)
 	button_next.grid(row=1, column=2)
 	button_prev.grid(row=1, column=0)
 
-# Button declaration, and the command for each event. 
+
+# Button declaration, and the command for each event.
 button_next = Button(root, text="Next >>", command=lambda: next(2), bg="#29ee55")
 button_close = Button(root, text="Close", command=root.quit, bg="#f5673d")
 button_prev = Button(root, text="<< Prev", command=prev, state=DISABLED, bg="#f7e9a7")
 
-# Placing all the buttons on to the grids with rows & Colums. 
+# Placing all the buttons on to the grids with rows & Columns.
 button_next.grid(row=1, column=2, padx=10, pady=10)
 button_close.grid(row=1, column=1, padx=10, pady=10)
 button_prev.grid(row=1, column=0, padx=10, pady=10)
