@@ -8,13 +8,13 @@ Python ImageViewer Application - Is a Cross platform ImageViewer application bui
 
 # Installation (Linux). 
 Installation for tkinter. 
-	sudo apt-get install python3-tk 
+* sudo apt-get install python3-tk 
 
 Installation for PIL/Pillow
-	sudo apt-get install python3-pil python3-pil.imagetk
+* sudo apt-get install python3-pil python3-pil.imagetk
 
 Installation for Forwarding X11 - (optional, required for Remote Target.)
-	sudo apt-get install x11-apps
+* sudo apt-get install x11-apps
 
 # Run.
 Execute below command in Terminal (Linux/Mac) or Power Shell (Windows).
@@ -24,14 +24,17 @@ Execute below command in Terminal (Linux/Mac) or Power Shell (Windows).
 1. View Next
 2. View Back
 3. Image Status Count
+4. Image Resolution
 
 # Current Version.
-ImageViewer v0.3
+ImageViewer v0.6
 
 # TODO.
-1. Image Properties (Size, Name.).
-2. Image Resolution.
+1. Display Image Properties.
+	* Size
+	* Name
+	* Format
 
 # Author
-Insta-ID : ravikiran.me
-Web-URL	 : https://ravi-kiran.me
+* Insta-ID : ravikiran.me
+* Web-URL	 : https://ravi-kiran.me
