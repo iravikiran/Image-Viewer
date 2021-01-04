@@ -4,24 +4,31 @@ This is a Custom Image viewer application build with Python's Tkinter module, Th
 
 Version History:
 -----------------
-What's New with ImageViewer v0.3: (Latest)
+What's New with ImageViewer v0.6: (Latest)
 	- Added Disable option Support for below Nagivation buttons.
 		1. Next.
 		2. Back.
 		3. Close.
 	- Added Color scheme for Nagivation buttons.
 	- Implemented Status bar for Image count.
+	- Added Image Resolution Info (Width x Height). 
 	
-Bug Fixes:
-	- Nagivation button Disabled, when there is no image to display.
+Bug Fixes (v0.6):
+	- Minor glitches with image Resolution is fixed.
 	- We hope everthing else is just fine! :)
 
+ImageViewer v0.3:
+	- Added Disable option Support for below Nagivation buttons.
+		1. Next.
+		2. Back.
+		3. Close.
+	- Added Color scheme for Nagivation buttons.
+	- Implemented Status bar for Image count.
 
 ImageViewer v0.2:
 	- Minor improvements in the Nagivation buttons.
 	- Fixed padding issue, with Nagivation buttons.
 	- Default UI Style. 
-
 
 ImageViewer v0.1:
 	- Simple Nagivation buttons. 
