@@ -1,5 +1,5 @@
 # About.
-Python ImageViewer Application - Is a Cross platform ImageViewer application built with tkinter for GUI support on Python. 
+Python ImageViewer (v0.6) Application - Is a Cross platform ImageViewer application built with tkinter for GUI support on Python. 
 
 # Pre-Requsites.
 1. Python v3.8x+
